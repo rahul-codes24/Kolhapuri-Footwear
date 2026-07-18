@@ -1,8 +1,8 @@
 # Kolhapuri E-Commerce Store
 
-A dynamic PHP and MySQL-based e-commerce platform specializing in traditional Kolhapuri chappals (footwear). This project features user authentication, a product catalog, shopping cart functionality, admin dashboards, and email/OTP verification via PHPMailer.
+Welcome to the Kolhapuri E-Commerce Store, a dynamic web application built using PHP, MySQL, and HTML/CSS. This platform allows customers to browse traditional Kolhapuri footwear, add items to a shopping cart, register accounts with SMTP-based email verification, and place orders. It also features a complete Admin Dashboard for managing products, tracking sales, and generating business reports.
 
-## 🚀 Features
+## Features
 * **User Authentication:** Registration, login, and secure email verification with OTP.
 * **Shopping Cart:** Add, update, and remove products dynamically from the cart.
 * **Product Catalog:** Separated categories for Male and Female footwear.
@@ -15,47 +15,63 @@ A dynamic PHP and MySQL-based e-commerce platform specializing in traditional Ko
 
 Follow these steps to run the project locally on your machine using **XAMPP**:
 
-### 1. Place the Project Files in `htdocs`
+### 1. Place the Project Files in XAMPP `htdocs`
 1. Clone or download this repository.
 2. Place the project folder inside your XAMPP document root, usually located at:
    `C:\xampp\htdocs\kolhapuri`
 
-### 2. Configure the Database
-1. Open the **XAMPP Control Panel** and start **Apache** and **MySQL**.
-2. Open your browser and navigate to **[phpMyAdmin](http://localhost/phpmyadmin/)**.
-3. Create a new database named **`kolhapuri`**.
-4. Select the `kolhapuri` database, go to the **Import** tab, choose the **`database.sql`** file from this project root, and click **Import** (or **Go**).
+### 2. Set up the MySQL Database
+1. Open the XAMPP Control Panel and click Start next to Apache and MySQL.
+2. Open your browser and navigate to phpMyAdmin.
+3. In the left sidebar, click New and create a database named kolhapuri.
+4. Select the kolhapuri database, click the Import tab at the top.
+5. Click Choose File and select the database.sql file in the root of your project directory.
+6. Scroll down and click Import (or Go).
 
 ### 3. Configure Email/SMTP Settings (Required for OTP)
-For security reasons, private SMTP email credentials are not committed to this repository. You must configure them locally:
-1. In the project root, copy the template file **`smtp_config.example.php`** and rename it to **`smtp_config.php`**.
-2. Open **`smtp_config.php`** in your code editor.
-3. Replace the placeholder values with your own Gmail address and a secure 16-character **Google App Password**:
-   ```php
-   $mail->Username = "your_email@gmail.com";
-   $mail->Password = "your_16_char_app_password";
-   $mail->SetFrom("your_email@gmail.com", "Kolhapuri E-com");
-   ```
-   *(Note: You can generate an App Password in your Google Account Security Settings under 2-Step Verification.)*
+
+For security, private email credentials are not committed to Git. You must create your own configuration file:
+
+1. Create your config file
+Duplicate the file named smtp_config.example.php in the root folder, and rename the copy to smtp_config.php.
+
+2. Get a Google App Password
+Since Google blocks normal passwords on external apps, you must generate a secure App Password:
+
+1. Go to your Google Account Security Settings.
+2. Under "How you sign in to Google", ensure 2-Step Verification is turned ON.
+3. Search for App Passwords in the top search bar.
+4. Enter a name (e.g., Kolhapuri Store) and click Create.
+5. Copy the 16-character password shown on the screen (e.g., abcd efgh ijkl mnop).
+   
+3. Update the credentials
+Open your new smtp_config.php file in your code editor (like VS Code or Visual Studio) and replace the placeholders with your details:
+
+php
+
+
+// ==========================================
+// ENTER YOUR CREDENTIALS HERE:
+// ==========================================
+$mail->Username = "YOUR_GMAIL_ADDRESS@gmail.com";    // Enter your Gmail address
+$mail->Password = "YOUR_16_CHARACTER_PASSWORD";     // Enter your 16-character App Password (without spaces)
+$mail->SetFrom("YOUR_GMAIL_ADDRESS@gmail.com", "Kolhapuri E-com");
+// ==========================================
 
 ### 4. Run the Project
-Open your web browser and navigate to:
-👉 **[http://localhost/kolhapuri/index.html](http://localhost/kolhapuri/index.html)**
+Open your web browser and navigate to: **[http://localhost/kolhapuri/index.html]**
 
 ---
 
-## 🔑 Default Credentials for Testing
+##  Default Credentials for Testing
 
 * **Admin Login Details:**
   * **Email:** `Admin@123`
   * **Password:** `1234`
-* **Test Customer Login Details:**
-  * **Email:** `shubhampatil6502@gmail.com`
-  * **Password:** `1234`
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 * `database.sql` - Sanitized database schema backup.
 * `smtp_config.example.php` - Template file for SMTP configuration.
 * `index.html` - Guest homepage.
