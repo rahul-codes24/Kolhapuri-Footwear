@@ -1,0 +1,12 @@
+# Private Credentials
+smtp_config.php
+
+# Local Database Backup containing private user records
+kolhapuri (1).sql
+
+# Editor and IDE folders
+.vs/
+.vscode/
+*.suo
+*.user
+*.db
