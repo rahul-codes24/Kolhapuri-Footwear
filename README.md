@@ -1,4 +1,4 @@
-# Kolhapuri E-Commerce Store
+# Kolhapuri Footwear Store
 
 Welcome to the Kolhapuri E-Commerce Store, a dynamic web application built using PHP, MySQL, and HTML/CSS. This platform allows customers to browse traditional Kolhapuri footwear, add items to a shopping cart, register accounts with SMTP-based email verification, and place orders. It also features a complete Admin Dashboard for managing products, tracking sales, and generating business reports.
 
